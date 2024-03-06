@@ -118,9 +118,9 @@ let h2 = (help/12).toFixed(2);
 document.getElementById('Row11Col3').innerHTML="Differenz:<br>+" + r(help) + " € (" + r(p) + "%)<br>+"+r(h2)+" € mtl. Abschlag";
 
 UStDelta=(UStDelta*40.903).toFixed(1);
-document.getElementById('idposSTdelta').innerHTML="Steuererhöhung über die mehr zu zahlende USt. &#x0394; "+r(UStDelta)+" Mio € (bei 40,9 Mio. BRD Haushalten mit &#8960; "+r(v)+" kWh im Jahr, Stand 2022)";
+document.getElementById('idposSTdelta').innerHTML="<br><br>Steuererhöhung über die mehr zu zahlende USt. &#x0394; "+r(UStDelta)+" Mio €<br>(bei 40,9 Mio. BRD Haushalten mit &#8960; "+r(v)+" kWh im Jahr, Stand 2022)";
 UStDelta=(v*USte/100*40.903/1000).toFixed(2);
-document.getElementById('idposSTdelta').innerHTML=document.getElementById('idposSTdelta').innerHTML + " Ges. USt.-Einnahmen: 7,57 Milliarden € mit &#8960; 3000 kWh pro Haushalt und Jahr.";
+document.getElementById('idposSTdelta').innerHTML=document.getElementById('idposSTdelta').innerHTML + "<br>Ges. USt.-Einnahmen: 7,57 Milliarden € mit &#8960; 3000 kWh pro Haushalt und Jahr.<br><br>";
 
 
 
