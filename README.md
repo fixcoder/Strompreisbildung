@@ -4,8 +4,7 @@ Wie setzt sich der Strompreis (Grundpreis und Arbeitspreis) zusammen.
 
 # Strompreisbildungs-Rechner 
 
-Bild demnächst
-
+![grafik](https://github.com/fixcoder/Strompreisbildung/assets/152872653/8afdf7f4-59f1-4867-984a-f01d6d645ac5)
 
 [Hier klicken zum Ausprobieren](https://fixcoder.github.io/Strompreisbildung/)
 
