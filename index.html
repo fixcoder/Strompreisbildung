@@ -1,0 +1,382 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Zusammenstellung Stromkosten (von Maik)</title>
+
+    <script language="javascript" type="text/javascript" src="Stromkosten.js"></script>
+    <link rel="stylesheet" type="text/css" href="Stromkosten.css" media="screen">
+</head>
+
+
+<body>
+ 
+  
+<a name="lnkArbeitspreisTabelle"></a>
+
+
+<script>
+<!-- 
+const Tarif2024 = [
+  [3, "Datum"							, "01.03.2024"],
+  [3, "Versorger"						, "Green-Planet-Energy"],
+  [3, "Anmerkung"						, "3/2024 GP-E Netzentgelderhöhung"],
+
+  [3, "Grundpreis €"					, 12.90  ],
+  [1, "Strombeschaffung und Vertrieb"	, 15.662 ],
+  [2, "Netznutzungsentgelte"			, 11.636 ],
+  [3, "Stromsteuer (Ökosteuer)"			,  2.050 ],
+  [3, "Paragraph-19-Umlage"				,  0.417 ],
+  [3, "Offshore-Netzumlage"				,  0.591 ],
+  [3, "KWK-Abgabe"						,  0.357 ],
+  [3, "Konzessionsabgabe"				,  1.758 ]  
+];
+    
+const Tarif2023 = [
+  [3, "Datum"							, "01.01.2023"],
+  [3, "Versorger"						, "Green-Planet-Energy"],
+  [3, "Anmerkung"						, "2023 Green-Planet-Energy"],
+
+  [3, "Grundpreis €"					, 13.90  ],
+  [1, "Strombeschaffung und Vertrieb"	, 15.662 ],
+  [2, "Netznutzungsentgelte"			,  9.249 ],
+  [3, "Stromsteuer (Ökosteuer)"			,  2.050 ],
+  [3, "Paragraph-19-Umlage"				,  0.417 ],
+  [3, "Offshore-Netzumlage"				,  0.591 ],
+  [3, "KWK-Abgabe"						,  0.357 ],
+  [3, "Konzessionsabgabe"				,  1.758 ]
+];
+ 
+  const Tarif2022 = [
+  [3, "Datum"							, "2022"],
+  [3, "Versorger"						, ""],
+  [3, "Anmerkung"	   , "2022 nicht verifiziert"],
+  [3, "Grundpreis €"					, 8.90   ],
+  [1, "Strombeschaffung und Vertrieb"	,25.9664 ],
+  [2, "-Netznutzungsentgelte"			, 0.0000 ],
+  [3, "Stromsteuer (Ökosteuer)"         , 2.0500 ],
+  [3, "-Paragraph-19-Umlage"			, 0.0000 ],
+  [3, "Offshore-Umlage §17"				, 0.4190 ], 
+  [3, "KWKG-Umlage"						, 0.3780 ],
+  [3, "Konzessionsabgabe"				, 1.9900 ],
+  [3, "NEV-Umlage §19"					, 0.4370 ],
+  [3, "AbLaV-Umlage §18" 			    , 0.0030 ],
+  [3, "EEG-Umlage"				        , 3.7230 ],
+  [3, "Arbeitspreis NNE"    	        , 6.9700 ],
+  [3, "Messstellenbetrieb"    	        , 9.4500 ],
+  [3, "Grundpreis NNE"    	            ,41.6500 ]
+];     
+    
+ const Tarif2021 = [
+  [3, "Datum"							, "2021"],
+  [3, "Versorger"						, ""],
+  [3, "Anmerkung"	   , "2021 nicht verifiziert"],
+
+  [3, "Grundpreis €"					, 8.90   ],
+  [1, "Strombeschaffung und Vertrieb"	,25.0420 ],
+  [2, "-Netznutzungsentgelte"			, 0.0000 ],
+  [3, "Stromsteuer (Ökosteuer)"			, 2.0500 ],
+  [3, "-Paragraph-19-Umlage"			, 0.0000 ],
+  [3, "Offshore-Umlage §17"				, 0.3950 ], 
+  [3, "KWKG-Umlage"						, 2.5400 ],
+  [3, "Konzessionsabgabe"				, 1.9900 ],
+  [3, "NEV-Umlage §19"					, 0.4320 ],
+  [3, "AbLaV-Umlage §18"			    , 0.0090 ],
+  [3, "EEG-Umlage"				        , 6.5000 ],
+  [3, "Arbeitspreis NNE"    	        , 6.5500 ],
+  [3, "Messstellenbetrieb"    	        , 9.4500 ],
+  [3, "Grundpreis NNE"    	            ,41.6500 ]
+];   
+
+const Tarif2020 = "";
+const Tarif2019 = "";
+    
+const Tarif2018 = [
+  [3, "Datum"							, "2018"],
+  [3, "Versorger"						, "Greenpeace Energy"],
+  [3, "Anmerkung"	   , "2018 nicht verifiziert"],
+  [3, "Grundpreis €"					, 8.90   ],
+  [1, "Strombeschaffung und Vertrieb"	,25.9664 ],
+  [2, "-Netznutzungsentgelte"			, 0.0000 ],
+  [3, "Stromsteuer (Ökosteuer)"         , 2.0500 ],
+  [3, "-Paragraph-19-Umlage"			, 0.0000 ],
+  [3, "Offshore-Umlage §17"				, 0.0370 ], 
+  [3, "KWKG-Umlage"						, 0,3450 ],
+  [3, "Konzessionsabgabe"				, 1.9900 ],
+  [3, "NEV-Umlage §19"					, 0.3700 ],
+  [3, "AbLaV-Umlage §18" 			    , 0.0110 ],
+  [3, "EEG-Umlage"				        , 6.7920 ],
+  [3, "Arbeitspreis NNE"    	        , 4.6200 ],
+  [3, "Messstellenbetrieb"    	        ,10.9500 ],
+  [3, "Grundpreis NNE"    	            ,40.1500 ]
+];  
+
+const Tarif2017 = [
+  [3, "Datum"							, "2017"],
+  [3, "Versorger"						, "Greenpeace Energy"],
+  [3, "Anmerkung"	   , "2017 nicht verifiziert"],
+  [3, "Grundpreis €"					, 8.90   ],
+  [1, "Strombeschaffung und Vertrieb"	,25.9664 ],
+  [2, "-Netznutzungsentgelte"			, 0.0000 ],
+  [3, "Stromsteuer (Ökosteuer)"         , 2.0500 ],
+  [3, "-Paragraph-19-Umlage"			, 0.0000 ],
+  [3, "Offshore-Umlage §17"				,-0,0280 ], 
+  [3, "KWKG-Umlage"						, 0.4380 ],
+  [3, "Konzessionsabgabe"				, 1.9900 ],
+  [3, "NEV-Umlage §19"					, 0,3880 ],
+  [3, "AbLaV-Umlage §18" 			    , 0.0060 ],
+  [3, "EEG-Umlage"				        , 6.8800 ],
+  [3, "Arbeitspreis NNE"    	        , 4.3500 ],
+  [3, "Messstellenbetrieb"    	        ,15.0000 ],
+  [3, "Grundpreis NNE"    	            ,38.0000 ]
+];   
+
+const Tarif2016 = "";
+const Tarif2015 = "";
+       
+const Tarif = [
+  [3, "Datum"							, "01.03.2024"],
+  [3, "Versorger"						, "leer"],
+  [3, "Anmerkung"						, ""],
+
+  [3, "Grundpreis €"					, 0.0  ],
+  [1, "Strombeschaffung und Vertrieb"	, 0.0  ],
+  [2, "Netznutzungsentgelte"			, 0.0  ],
+  [3, "Stromsteuer (Ökosteuer)"			, 0.0  ],
+  [3, "Paragraph-19-Umlage"				, 0.0  ],
+  [3, "Offshore-Netzumlage"				, 0.0  ],
+  [3, "KWK-Abgabe"						, 0.0  ],
+  [3, "Konzessionsabgabe"				, 0.0  ],
+  [3, "NEV-Umlage §19"					, 0.0  ],
+  [3, "AbLaV-Umlage §18" 			    , 0.0  ],
+  [3, "EEG-Umlage"				        , 0.0  ],
+  [3, "Arbeitspreis NNE"    	        , 0.0  ],
+  [3, "Messstellenbetrieb"    	        , 0.0  ],
+  [3, "Grundpreis NNE"    	            , 0.0  ]
+];
+
+var arrTarife = new Array();
+arrTarife[0] = new Array();
+arrTarife[0][0] = new Array();
+
+arrTarife[0] = Tarif2024;
+arrTarife[1] = Tarif2023;
+arrTarife[2] = Tarif;
+
+/*
+	<br>
+	<fieldset>
+	<legend>Arbeitspreis</legend>
+	<input type="checkbox" id="allePositionen" name="allePositionen" value="Ja" checked onClick="Javascript:calcArbeitspreis();">alle Positionen zeigen
+	</fieldset>
+*/
+-->
+</script>
+
+<div id='ArbeitspreisTabelle' style="display:inline;">
+<table border=1 style="margin-left:-20px; padding:20px;" width="1100px;"><tr><td>
+
+
+    
+    
+
+<table border=1 class="tabAP" width="100%">
+
+<tr style="background-color:yellow;">
+	<td colspan=1><button type="button" onclick="Javascript:calcArbeitspreis();" style="font-size:1em;">Anteile berechnen lassen</button></td>
+	<td colspan=3>
+	<input type="text" id="idJahresverbrauch" name="Jahresverbrauch" value="3000" width="20px" size="8" maxlength="8" onclick="Javascript:calcArbeitspreis();">
+	</td>
+	<td>kWh / <b>Jahr</b>
+
+	</td>
+</tr>
+
+<tr><td width="30%">Preisbestandteile Tarif Strom</td>
+    <td width="40px" class="c">Einheit</td>
+    <td width="40px" class="c">
+	bisher<br>
+	<select name="bisher" id="bisher" onchange="OnChange_cbo_TarifSpalte('1');">
+			<script>
+			var strSelected = "";
+			for (i=0;i<=arrTarife.length;i++)
+			{ 
+				if (i==1) { document.write("<option value='"+i+"' selected>"+arrTarife[i][2][2]+"</option>"); } 
+				else { document.write("<option value='"+i+"' "+strSelected+">"+arrTarife[i][2][2]+"</option>"); }
+			}
+			</script>
+	</select> 
+	
+	</td>
+	
+    <td width="40px" class="c">
+	jetzt<br>
+	<select name="neu" id="neu" onchange="OnChange_cbo_TarifSpalte('2');">
+			<script>
+			var strSelected = "";			
+			for (i=0;i<=arrTarife.length;i++)
+			{ 
+				if (i==0) { document.write("<option value='"+i+"' selected>"+arrTarife[i][2][2]+"</option>"); } 
+				else { document.write("<option value='"+i+"' "+strSelected+">"+arrTarife[i][2][2]+"</option>"); }
+			}
+			</script>
+	</select> 	
+	
+	</td>
+    <td width="25%"><div id="idposkWhJahr">Differenz</div></td>
+</tr>
+
+<tr style="background-color:lightgrey;"><td colspan=5>Arbeitspreis</td></tr> 
+
+<tr>
+	<td>Strombeschaffung und Vertrieb<br>(variiert je nach Stromanbieter)</td>
+	<td class="c">Cent/kWh</td>
+	<td id="Row1Col1" class="b">15,662</td>
+	<td id="Row1Col2" class="b">15,662</td>
+	<td id="Row1Col3" ><div id="idpos1"></div></td>
+</tr>
+
+<tr>
+	<td>&nbsp;+&nbsp;<a href="https://www.bundesnetzagentur.de/SharedDocs/A_Z_Glossar/N/Netzentgelt.html?nn=686258" target="AP"><b>Netznutzungsentgelte</b></a></td>
+	<td class="c"><b>Cent/kWh</b></td>
+	<td id="Row2Col1" class="b"><b>9,249</b></td>
+	<td id="Row2Col2" class="b"><b>11,636</b></td>
+	<td id="Row2Col3" ><div id="idpos2"><span class="markY">&nbsp;&#x0394; 2,387&nbsp;</span></div></td>
+</tr>
+
+<tr>
+	<td>&nbsp;+&nbsp;<a href="https://www.bundesfinanzministerium.de/Content/DE/Glossareintraege/S/Stromsteuer.html?view=renderHelp" target="_blank">Stromsteuer (Ökosteuer)</a></td>
+	<td class="c">Cent/kWh</td>
+	<td id="Row3Col1" class="b">2,050</td>
+	<td id="Row3Col2" class="b">2,050</td>
+	<td id="Row3Col3" ><div id="idpos3"></div></td>
+</tr>
+
+<tr>
+	<td>&nbsp;+&nbsp;<a href="https://www.bundesnetzagentur.de/SharedDocs/A_Z_Glossar/P/Par19_StromNEV_Umlage.html?nn=686258" target="AP">Paragraph-19-Umlage</a></td>
+	<td class="c">Cent/kWh</td>
+	<td id="Row4Col1" class="b">0,417</td>
+	<td id="Row4Col2" class="b">0,417</td>
+	<td id="Row4Col3" ><div id="idpos4"></div></td>
+</tr>
+
+<tr>
+	<td>&nbsp;+&nbsp;<a href="https://www.bundesnetzagentur.de/SharedDocs/A_Z_Glossar/O/Offshore-Netzumlage.html?nn=686258" target="AP">Offshore-Netzumlage</a></td>
+	<td class="c">Cent/kWh</td>
+	<td id="Row5Col1" class="b">0,591</td>
+	<td id="Row5Col2" class="b">0,591</td>
+	<td id="Row5Col3" ><div id="idpos5"></div></td>
+</tr>
+
+<tr>
+	<td>&nbsp;+&nbsp;<a href="https://www.bundesnetzagentur.de/SharedDocs/A_Z_Glossar/K/KWKG_Umlage.html?nn=686258" target="AP">KWK-Abgabe</a></td>
+	<td class="c">Cent/kWh</td>
+	<td id="Row6Col1" class="b">0,357</td>
+	<td id="Row6Col2" class="b">0,357</td>
+	<td id="Row6Col3" ><div id="idpos6"></div></td>
+</tr>
+
+<tr>
+	<td>&nbsp;+&nbsp;<a href="https://www.bundesnetzagentur.de/SharedDocs/A_Z_Glossar/K/Konzessionsabgabe.html?nn=686258" target="AP">Konzessionsabgabe</a></td>
+	<td class="c">Cent/kWh</td>
+	<td id="Row7Col1" class="b">1,758</td>
+	<td id="Row7Col2" class="b">1,758</td>
+	<td id="Row7Col3" ><div id="idpos7"></div></td>
+</tr>
+
+<tr>
+	<td>Zwischensumme</td>
+	<td class="c">Cent/kWh</td>
+	<td id="Row8Col1" class="b">= 30,084</td>
+	<td id="Row8Col2" class="b">= 32,471</td>
+	<td id="Row8Col3" ></td>
+</tr>
+    
+<tr>
+	<td>&nbsp;+&nbsp;Umsatzsteuer (19%)</td>
+	<td class="c">Cent/kWh</td>
+	<td id="Row9Col1" class="b">5,716</td>
+	<td id="Row9Col2" class="b">6,169</td>
+	<td id="Row9Col3"  ><div id="idpos8" class="tdAP"><span class="markY">&nbsp;&#x0394; 0,453 zusätzliche Steuereinnahmen :-)&nbsp;</span></div></td>
+</tr>
+
+<tr>
+	<td></td>
+	<td class="c">Cent/kWh</td>
+	<td id="Row10Col1" class="b"><b>&sum; 35,80</b></td>
+	<td id="Row10Col2" class="b"><b>&sum; 38,64</b></td>
+	<td id="Row10Col3">
+	<div id="idposGesCent">&sum;&#x0394; 2,84</div>
+	<div id="idposGesEuroJahr" style="display:none;">€/Jahr</div>
+	<div id="idposGesEuroMonat" style="display:none;">€ mtl. Abschlag</div>
+	</td>
+</tr> 
+</table>  
+
+    
+<div id='GrundpreisTabelle'  style="display:none;">
+<table border=1 class="tabAP" width="100%"> 
+    <tr>
+        <td width="30%">Zwischensumme</td>
+        <td width="40px" class="c">Euro/Jahr</td>
+        <td id="Row11Col1" width="40px" class="b"><div id="idpos10"></div></td>
+        <td id="Row11Col2" width="40px" class="b"><div id="idpos9"></div></td>
+        <td id="Row11Col3" width="25%"><div id="idposdiff10"></div></td>
+    </tr>   
+</table>
+
+
+
+<div id="idposSTdelta" class='bedenkeUStDelta' >...</div>
+
+
+
+<a href="javascript:opener('GesamtStrom')">(Tabelle um den Grundpreis und Jahres-Abrechnung Strom erweitern.)</a>
+
+
+
+<div id='GesamtStrom'  style="display:none;">
+<br><br>
+
+<table border=1 class="tabAP" width="100%">
+<tr style="background-color:lightgrey;">
+	<td colspan=5>Grundpreis</td>
+</tr> 
+
+<tr>
+	<td width="30%">
+	<select name="Grundpreis" id="Grundpreis" onchange="OnChange_cbo_Grundpreis();">
+	<option value="12.90" select>Grundpreis 12,90 €/Monat</option>
+	<option value="13.90">Grundpreis 13,90 €/Monat</option>
+	<option value="8.90">Grundpreis 8,90 €/Monat</option>
+	</select> 
+	<br>
+	&nbsp;incl.&nbsp;mtl. Zählermiete
+	</td>
+    
+	<td width="40px" class="c">Euro/Monat</td>
+    <td width="40px" class="b"><div id="idposGrundpreis1">12,90</div></td>
+    <td width="40px" class="b"><div id="idposGrundpreis2">12,90</div></td>
+    <td id="Row12Col3" width="25%"><div id="idposGrundpreisJahr">&sum; 154,80 €/Jahr</div></td>
+</tr>
+
+<tr>
+	<td colspan=1 align=right>Summe: </td>
+    <td class="c">Euro/Jahr</td>
+    <td id="Row13Col1" align="right"><b>&sum;</b></td>
+    <td id="Row13Col2" align="right"><b>&sum;</b></td>
+	<td id="Row13Col3" align="right"></td>
+</tr>
+</table>
+
+</div> 
+</div> 
+
+
+
+</td></tr></table>
+
+    
+</body>
+</html>
