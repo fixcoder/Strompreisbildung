@@ -1,5 +1,5 @@
 # Strompreisbildung
-Wie setzt sich der Strompreis (Grundpreis und Arbeitspreis) zusammen.
+Wie setzt sich der Strompreis aus Arbeitspreis und Grundpreis zusammen.
 
 
 # Strompreisbildungs-Rechner 
