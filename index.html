@@ -17,7 +17,22 @@
 
 
 <script>
-<!-- 
+<!--
+const Tarif102024 = [
+  [3, "Datum" , "1.10.2024"],
+  [3, "Versorger", "Green-Planet-Energy"],
+  [3, "Anmerkung", "10/2024 GP-E"],
+
+  [3, "Grundpreis €", 12.90  ],
+  [1, "Strombeschaffung und Vertrieb", 12.932 ],
+  [2, "Netznutzungsentgelte", 11.636 ],
+  [3, "Stromsteuer (Ökosteuer)",  2.050 ],
+  [3, "Paragraph-19-Umlage",  0.643 ],
+  [3, "Offshore-Netzumlage",  0.656 ],
+  [3, "KWK-Abgabe",  0.275 ],
+  [3, "Konzessionsabgabe",  1.758 ]  
+];
+	
 const Tarif062024 = [
   [3, "Datum" , "01.06.2024"],
   [3, "Versorger", "Green-Planet-Energy"],
@@ -176,7 +191,7 @@ var arrTarife = new Array();
 arrTarife[0] = new Array();
 arrTarife[0][0] = new Array();
 
-	
+arrTarife[4] = Tarif102024;	
 arrTarife[3] = Tarif062024;
 arrTarife[2] = Tarif2024;
 arrTarife[1] = Tarif2023;
